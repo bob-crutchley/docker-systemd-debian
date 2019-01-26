@@ -3,3 +3,10 @@ services:
   container:
     build:
       context: .
+    privileged: true
+    volumes:
+    - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    ports:
+    - target: 22
+      protocol: tcp
+      mode: host
